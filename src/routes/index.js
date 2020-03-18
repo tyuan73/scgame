@@ -43,7 +43,10 @@ const routes = {
       path: '/admin',
       load: () => import(/* webpackChunkName: 'admin' */ './admin'),
     },
-
+    {
+      path: '/examples',
+      load: () => import(/* webpackChunkName: 'examples' */ './examples'),
+    },
     // Wildcard routes, e.g. { path: '(.*)', ... } (must go last)
     {
       path: '(.*)',
@@ -56,7 +59,7 @@ const routes = {
     const route = await next();
 
     // Provide default values for title, description etc.
-    route.title = `${route.title || 'Untitled Page'} - www.reactstarterkit.com`;
+    route.title = `${route.title || 'Untitled Page'} - www.scgames.com`;
     route.description = route.description || '';
 
     return route;
