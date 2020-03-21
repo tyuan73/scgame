@@ -43,6 +43,9 @@ export default function Html({
           href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
           rel="stylesheet"
         />
+        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/css/paper-kit.min.css" rel="stylesheet" />
+        <link href="/css/demo.css" rel="stylesheet" />
         {styles.map(style => (
           <style
             key={style.id}
