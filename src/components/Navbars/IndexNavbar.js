@@ -16,9 +16,9 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // nodejs library that concatenates strings
-import classnames from "classnames";
+import classnames from 'classnames';
 // reactstrap components
 import {
   Button,
@@ -28,16 +28,16 @@ import {
   NavItem,
   NavLink,
   Nav,
-  Container
-} from "reactstrap";
+  Container,
+} from 'reactstrap';
 
 function IndexNavbar() {
-  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
+  const [navbarColor, setNavbarColor] = React.useState('navbar-transparent');
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
   const toggleNavbarCollapse = () => {
     setNavbarCollapse(!navbarCollapse);
-    document.documentElement.classList.toggle("nav-open");
+    document.documentElement.classList.toggle('nav-open');
   };
 
   React.useEffect(() => {
@@ -46,23 +46,23 @@ function IndexNavbar() {
         document.documentElement.scrollTop > 299 ||
         document.body.scrollTop > 299
       ) {
-        setNavbarColor("");
+        setNavbarColor('');
       } else if (
         document.documentElement.scrollTop < 300 ||
         document.body.scrollTop < 300
       ) {
-        setNavbarColor("navbar-transparent");
+        setNavbarColor('navbar-transparent');
       }
     };
 
-    window.addEventListener("scroll", updateNavbarColor);
+    window.addEventListener('scroll', updateNavbarColor);
 
     return function cleanup() {
-      window.removeEventListener("scroll", updateNavbarColor);
+      window.removeEventListener('scroll', updateNavbarColor);
     };
   });
   return (
-    <Navbar className={classnames("fixed-top", navbarColor)} expand="lg">
+    <Navbar className={classnames('fixed-top', navbarColor)} expand="lg">
       <Container>
         <div className="navbar-translate">
           <NavbarBrand
@@ -74,8 +74,8 @@ function IndexNavbar() {
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
-            className={classnames("navbar-toggler navbar-toggler", {
-              toggled: navbarCollapse
+            className={classnames('navbar-toggler navbar-toggler', {
+              toggled: navbarCollapse,
             })}
             onClick={toggleNavbarCollapse}
           >

@@ -21,9 +21,6 @@ import React from 'react';
 // nodejs library that concatenates strings
 import classnames from 'classnames';
 
-import Link from '../Link';
-
-// reactstrap components
 import {
   Collapse,
   NavbarBrand,
@@ -33,6 +30,9 @@ import {
   Nav,
   Container,
 } from 'reactstrap';
+import Link from '../Link';
+
+// reactstrap components
 
 function ExamplesNavbar() {
   const [navbarColor, setNavbarColor] = React.useState('navbar-transparent');

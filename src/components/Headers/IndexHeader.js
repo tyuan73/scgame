@@ -41,7 +41,7 @@ function IndexHeader() {
               <Button
                 href="/play"
                 className="btn-round"
-                color="success"
+                color="danger"
                 type="button"
                 outline
               >

@@ -16,26 +16,25 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Button, Container } from "reactstrap";
+import { Button, Container } from 'reactstrap';
 
 // core components
 
 function ErrorPageHeader() {
-  let pageHeader = React.createRef();
+  const pageHeader = React.createRef();
 
   React.useEffect(() => {
     if (window.innerWidth < 991) {
       const updateScroll = () => {
-        let windowScrollTop = window.pageYOffset / 3;
-        pageHeader.current.style.transform =
-          "translate3d(0," + windowScrollTop + "px,0)";
+        const windowScrollTop = window.pageYOffset / 3;
+        pageHeader.current.style.transform = `translate3d(0,${windowScrollTop}px,0)`;
       };
-      window.addEventListener("scroll", updateScroll);
+      window.addEventListener('scroll', updateScroll);
       return function cleanup() {
-        window.removeEventListener("scroll", updateScroll);
+        window.removeEventListener('scroll', updateScroll);
       };
     }
   });
@@ -44,10 +43,10 @@ function ErrorPageHeader() {
     <>
       <div
         style={{
-          backgroundImage: "url(" + require("assets/img/daniel-olahh.jpg") + ")"
+          backgroundImage: `url(${require('assets/img/daniel-olahh.jpg')})`,
         }}
         className="page-header"
-        data-parallax={true}
+        data-parallax
         ref={pageHeader}
       >
         <div className="filter" />
