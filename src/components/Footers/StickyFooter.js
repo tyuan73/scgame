@@ -2,11 +2,11 @@ import React from 'react';
 import useStyles from 'isomorphic-style-loader/useStyles';
 
 import Footer from './Footer';
-import s from './ErrorFooter.css';
+import s from './StickyFooter.css';
 
-function ErrorFooter() {
+function StickyFooter() {
   useStyles(s);
   return <Footer extraClass={s.container} />;
 }
 
-export default ErrorFooter;
+export default StickyFooter;

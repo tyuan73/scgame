@@ -1,0 +1,8 @@
+.leftCol {
+  border-right: 2px solid black;
+  height: 500px;
+}
+.rightCol {
+  border-left: 2px solid black;
+  height: 500px;
+}

@@ -38,7 +38,7 @@ import React from 'react';
 // core components
 import ErrorNavbar from 'components/Navbars/ErrorNavbar.js';
 import ErrorPageHeader from 'components/Headers/ErrorPageHeader.js';
-import ErrorFooter from 'components/Footers/ErrorFooter.js';
+import StickyFooter from 'components/Footers/StickyFooter.js';
 
 function NotFound() {
   // document.documentElement.classList.remove("nav-open");
@@ -52,7 +52,7 @@ function NotFound() {
     <>
       <ErrorNavbar />
       <ErrorPageHeader />
-      <ErrorFooter />
+      <StickyFooter />
     </>
   );
 }

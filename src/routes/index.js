@@ -19,10 +19,10 @@ const routes = {
       path: '',
       load: () => import(/* webpackChunkName: 'home' */ './home'),
     },
-    // {
-    //   path: '',
-    //   load: () => import(/* webpackChunkName: 'home' */ './home'),
-    // },
+    {
+      path: '/play',
+      load: () => import(/* webpackChunkName: 'play' */ './play'),
+    },
     // {
     //   path: '/contact',
     //   load: () => import(/* webpackChunkName: 'contact' */ './contact'),
