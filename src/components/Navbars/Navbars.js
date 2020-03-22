@@ -1,27 +1,9 @@
-/*!
-
-=========================================================
-* Paper Kit React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
-
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from 'react';
-// import { Link } from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from 'classnames';
-
+// reactstrap components
 import {
+  Button,
   Collapse,
   NavbarBrand,
   Navbar,
@@ -30,18 +12,9 @@ import {
   Nav,
   Container,
 } from 'reactstrap';
-import Link from '../Link';
 
-// reactstrap components
-
-function ExamplesNavbar() {
+function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState('navbar-transparent');
-  const [navbarCollapse, setNavbarCollapse] = React.useState(false);
-
-  const toggleNavbarCollapse = () => {
-    setNavbarCollapse(!navbarCollapse);
-    document.documentElement.classList.toggle('nav-open');
-  };
 
   React.useEffect(() => {
     const updateNavbarColor = () => {
@@ -64,21 +37,32 @@ function ExamplesNavbar() {
       window.removeEventListener('scroll', updateNavbarColor);
     };
   });
+
+  return <RawNavbar navbarColor={navbarColor} />;
+}
+
+function DefaultNavbar() {
+  return <RawNavbar navbarColor={''} />;
+}
+
+function RawNavbar({ navbarColor }) {
+  const [navbarCollapse, setNavbarCollapse] = React.useState(false);
+
+  const toggleNavbarCollapse = () => {
+    setNavbarCollapse(!navbarCollapse);
+    document.documentElement.classList.toggle('nav-open');
+  };
+
   return (
-    <Navbar
-      className={classnames('fixed-top', navbarColor)}
-      color-on-scroll="300"
-      expand="lg"
-    >
+    <Navbar className={classnames('fixed-top', navbarColor)} expand="lg">
       <Container>
         <div className="navbar-translate">
           <NavbarBrand
             data-placement="bottom"
-            to="/"
-            title="Coded by Creative Tim"
-            tag={Link}
+            href="/"
+            title="Steal & Challenge"
           >
-            Paper Kit 2
+            Home
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
@@ -98,20 +82,7 @@ function ExamplesNavbar() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
-            <NavItem>
-              <NavLink to="/" tag={Link}>
-                <i className="nc-icon nc-layout-11" /> Components
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-examples-navbar"
-                target="_blank"
-              >
-                <i className="nc-icon nc-book-bookmark" /> Documentation
-              </NavLink>
-            </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink
                 data-placement="bottom"
                 href="https://twitter.com/CreativeTim?ref=creativetim"
@@ -143,17 +114,27 @@ function ExamplesNavbar() {
                 <i className="fa fa-instagram" />
                 <p className="d-lg-none">Instagram</p>
               </NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.github.com/CreativeTimOfficial?ref=creativetim"
+                href="https://github.com/tyuan73/scgame"
                 target="_blank"
-                title="Star on GitHub"
+                title="GitHub"
               >
                 <i className="fa fa-github" />
                 <p className="d-lg-none">GitHub</p>
               </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/help">
+                <i className="nc-icon nc-book-bookmark" /> Help
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <Button className="btn-round" color="info" href="#pablo">
+                Login
+              </Button>
             </NavItem>
           </Nav>
         </Collapse>
@@ -162,4 +143,4 @@ function ExamplesNavbar() {
   );
 }
 
-export default ExamplesNavbar;
+export { DefaultNavbar, IndexNavbar };

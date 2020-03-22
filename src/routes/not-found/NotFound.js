@@ -36,9 +36,9 @@ import React from 'react';
 // } from "reactstrap";
 
 // core components
-import ErrorNavbar from 'components/Navbars/ErrorNavbar.js';
-import ErrorPageHeader from 'components/Headers/ErrorPageHeader.js';
-import StickyFooter from 'components/Footers/StickyFooter.js';
+import { IndexNavbar } from 'components/Navbars/Navbars';
+import ErrorPageHeader from 'components/Headers/ErrorPageHeader';
+import StickyFooter from 'components/Footers/StickyFooter';
 
 function NotFound() {
   // document.documentElement.classList.remove("nav-open");
@@ -50,7 +50,7 @@ function NotFound() {
   });
   return (
     <>
-      <ErrorNavbar />
+      <IndexNavbar />
       <ErrorPageHeader />
       <StickyFooter />
     </>

@@ -8,8 +8,11 @@
  */
 
 import React from 'react';
-import Layout from '../../components/Layout';
-import Page from '../../components/Page';
+
+import { DefaultNavbar } from 'components/Navbars/Navbars';
+import Page from 'components/Page';
+import StickyFooter from 'components/Footers/StickyFooter';
+
 import about from './about.md';
 
 function action() {
@@ -17,9 +20,11 @@ function action() {
     chunks: ['about'],
     title: about.title,
     component: (
-      <Layout>
+      <>
+        <DefaultNavbar />
         <Page {...about} />
-      </Layout>
+        <StickyFooter />
+      </>
     ),
   };
 }
